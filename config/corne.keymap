@@ -31,13 +31,6 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             flavor = "balanced";
         };
-
-        bc: better-caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "Better Caps";
-            #binding-cells = <0>;
-            bindings = <&lt 4 ESCAPE>, <&none>, <&caps_word>;
-        };
     };
 
     combos {
@@ -65,10 +58,10 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp TAB  &kp Q         &kp W        &kp E        &kp R          &kp T            &kp Y      &kp U          &kp I        &kp O        &kp P            &kp BSPC
-&bc      &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G            &kp H      &hmr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
-&none    &kp Z         &kp X        &kp C        &kp V          &kp B            &kp N      &kp M          &kp COMMA    &kp DOT      &kp FSLH         &none
-                                    &none        &mo 1          &kp BACKSPACE    &kp SPACE  &mo 2          &kp RET
+&kp TAB       &kp Q         &kp W        &kp E        &kp R          &kp T            &kp Y      &kp U          &kp I        &kp O        &kp P            &kp BSPC
+&lt 4 ESCAPE  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G            &kp H      &hmr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
+&none         &kp Z         &kp X        &kp C        &kp V          &kp B            &kp N      &kp M          &kp COMMA    &kp DOT      &kp FSLH         &none
+                                         &none        &mo 1          &kp BACKSPACE    &kp SPACE  &mo 2          &kp RET
             >;
         };
 
