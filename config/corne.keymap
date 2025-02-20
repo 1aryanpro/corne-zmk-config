@@ -43,16 +43,19 @@
     combos {
         compatible = "zmk,combos";
 
-        ToSteno {
-            bindings = <&to 3>;
+        TogSteno {
+            bindings = <&tog_steno>;
             key-positions = <37 38 39 40>;
-            layers = <0>;
+            layers = <0 3>;
         };
+    };
 
-        ToHome {
-            bindings = <&to 0>;
-            key-positions = <38 39>;
-            layers = <3>;
+    macros {
+        tog_steno: into_steno {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(PERIOD) &tog 3>;
+            label = "INTO_STENO";
         };
     };
 
@@ -62,9 +65,9 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp TAB  &kp Q        &kp W         &kp E        &kp R          &kp T            &kp Y      &kp U          &kp I        &kp O         &kp P                &kp BSPC
-&bc      &hml LALT A  &hml LCTRL S  &hml LGUI D  &hml LSHIFT F  &kp G            &kp H      &hmr RSHIFT J  &hmr RCMD K  &hmr RCTRL L  &hmr RIGHT_ALT SEMI  &kp SQT
-&none    &kp Z        &kp X         &kp C        &kp V          &kp B            &kp N      &kp M          &kp COMMA    &kp DOT       &kp FSLH             &none
+&kp TAB  &kp Q         &kp W        &kp E        &kp R          &kp T            &kp Y      &kp U          &kp I        &kp O        &kp P            &kp BSPC
+&bc      &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G            &kp H      &hmr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
+&none    &kp Z         &kp X        &kp C        &kp V          &kp B            &kp N      &kp M          &kp COMMA    &kp DOT      &kp FSLH         &none
                                     &none        &mo 1          &kp BACKSPACE    &kp SPACE  &mo 2          &kp RET
             >;
         };
@@ -72,10 +75,10 @@
         lower_layer {
             display-name = "Lower";
             bindings = <
-&bt BT_CLR    &none  &kp F7  &kp F8  &kp F9  &kp F12     &none         &kp N7  &kp N8  &kp N9  &kp N0        &kp BSPC
-&bt BT_SEL 0  &none  &kp F4  &kp F5  &kp F6  &kp F11     &kp LS(STAR)  &kp N4  &kp N5  &kp N6  &kp LS(PLUS)  &kp EQUAL
-&bt BT_SEL 1  &none  &kp F1  &kp F2  &kp F3  &kp F10     &kp FSLH      &kp N1  &kp N2  &kp N3  &kp MINUS     &none
-                             &none   &none   &kp BSPC    &kp SPACE     &none   &kp N0
+&bt BT_CLR    &none  &kp F7  &kp F8  &kp F9  &kp F12     &none      &kp N7  &kp N8  &kp N9  &kp N0     &kp BSPC
+&bt BT_SEL 0  &none  &kp F4  &kp F5  &kp F6  &kp F11     &kp STAR   &kp N4  &kp N5  &kp N6  &kp PLUS   &kp EQUAL
+&bt BT_SEL 1  &none  &kp F1  &kp F2  &kp F3  &kp F10     &kp FSLH   &kp N1  &kp N2  &kp N3  &kp MINUS  &none
+                             &none   &none   &kp BSPC    &kp SPACE  &none   &kp N0
             >;
 
             label = "Lower";
@@ -106,10 +109,10 @@
 
         caps_layer {
             bindings = <
-&none  &none  &none      &none     &none      &none    &none     &none     &none   &none      &none  &none
-&none  &none  &kp LCTRL  &kp LGUI  &kp LSHFT  &none    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
-&none  &none  &none      &none     &none      &none    &none     &none     &none   &none      &none  &none
-                         &none     &none      &none    &none     &none     &none
+&none  &none      &none         &none     &none      &none    &none     &none     &none   &none      &none          &none
+&none  &kp LCTRL  &kp LEFT_ALT  &kp LGUI  &kp LSHFT  &none    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp BACKSPACE  &none
+&none  &none      &none         &none     &none      &none    &none     &none     &none   &none      &none          &none
+                                &none     &none      &none    &none     &none     &none
             >;
 
             label = "Caps";
