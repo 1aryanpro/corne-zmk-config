@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -37,18 +36,9 @@
         compatible = "zmk,combos";
 
         TogSteno {
-            bindings = <&tog_steno>;
+            bindings = <&tog 3>;
             key-positions = <37 38 39 40>;
             layers = <0 3>;
-        };
-    };
-
-    macros {
-        tog_steno: into_steno {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(PERIOD) &tog 3>;
-            label = "INTO_STENO";
         };
     };
 
@@ -58,35 +48,34 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp TAB       &kp Q         &kp W        &kp E        &kp R          &kp T              &kp Y        &kp U          &kp I        &kp O        &kp P            &kp BSPC
-&lt 4 ESCAPE  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G              &kp H        &hmr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
-&none         &kp Z         &kp X        &kp C        &kp V          &kp B              &kp N        &kp M          &kp COMMA    &kp DOT      &kp FSLH         &none
-                                         &none        &none          &lt 1 BACKSPACE    &lt 2 SPACE  &kp RET        &none
+&kp TAB       &kp Q         &kp W        &kp E        &kp R          &kp T              &kp Y      &kp U          &kp I        &kp O        &kp P            &kp BSPC
+&lt 2 ESCAPE  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G              &kp H      &hmr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
+&none         &kp Z         &kp X        &kp C        &kp V          &kp B              &kp N      &kp M          &kp COMMA    &kp DOT      &kp FSLH         &none
+                                         &none        &none          &lt 1 BACKSPACE    &kp SPACE  &kp RET        &none
             >;
         };
 
         lower_layer {
             display-name = "Lower";
             bindings = <
-&bt BT_CLR    &none  &kp F7  &kp F8  &kp F9  &kp F12     &none      &kp N7  &kp N8  &kp N9  &kp N0     &kp BSPC
-&bt BT_SEL 0  &none  &kp F4  &kp F5  &kp F6  &kp F11     &kp STAR   &kp N4  &kp N5  &kp N6  &kp PLUS   &kp EQUAL
-&bt BT_SEL 1  &none  &kp F1  &kp F2  &kp F3  &kp F10     &kp FSLH   &kp N1  &kp N2  &kp N3  &kp MINUS  &none
-                             &none   &none   &kp BSPC    &kp SPACE  &none   &kp N0
+&none  &kp POUND    &kp CARET   &kp LPAR  &kp RPAR  &kp BACKSLASH    &kp SLASH  &kp N7   &kp N8  &kp N9  &kp MINUS   &kp BSPC
+&none  &kp EXCL     &kp DOLLAR  &kp LBKT  &kp RBKT  &kp PIPE         &kp STAR   &kp N4   &kp N5  &kp N6  &kp PLUS    &kp EQUAL
+&none  &kp PERCENT  &kp AT      &kp LBRC  &kp RBRC  &kp AMPS         &kp COMMA  &kp N1   &kp N2  &kp N3  &kp PERIOD  &kp RET
+                                &none     &none     &kp BSPC         &kp SPACE  &kp RET  &kp N0
             >;
 
             label = "Lower";
         };
 
-        raise_layer {
-            display-name = "Raise";
+        caps_layer {
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &none     &none   &none     &none     &none        &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &none     &none   &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &none     &trans       &trans     &none      &kp RALT
+&none  &none      &none         &none      &none      &none    &none     &none     &none   &none      &none          &none
+&none  &kp LCTRL  &kp LEFT_ALT  &kp LGUI   &kp LSHFT  &none    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp BACKSPACE  &none
+&none  &kp LG(Z)  &kp LG(X)     &kp LG(C)  &kp LG(V)  &none    &none     &none     &none   &none      &none          &none
+                                &none      &none      &none    &none     &none     &none
             >;
 
-            label = "Raise";
+            label = "Caps";
         };
 
         steno_layer {
@@ -98,17 +87,6 @@
             >;
 
             label = "Steno";
-        };
-
-        caps_layer {
-            bindings = <
-&none  &none      &none         &none     &none      &none    &none     &none     &none   &none      &none          &none
-&none  &kp LCTRL  &kp LEFT_ALT  &kp LGUI  &kp LSHFT  &none    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp BACKSPACE  &none
-&none  &none      &none         &none     &none      &none    &none     &none     &none   &none      &none          &none
-                                &none     &none      &none    &none     &none     &none
-            >;
-
-            label = "Caps";
         };
     };
 };
