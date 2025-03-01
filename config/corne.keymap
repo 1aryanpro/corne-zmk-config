@@ -16,7 +16,7 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             flavor = "balanced";
         };
 
@@ -26,7 +26,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             flavor = "balanced";
         };
@@ -36,9 +36,9 @@
         compatible = "zmk,combos";
 
         TogSteno {
-            bindings = <&tog 3>;
+            bindings = <&tog 4>;
             key-positions = <37 38 39 40>;
-            layers = <0 3>;
+            layers = <0 4>;
         };
     };
 
@@ -48,23 +48,34 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp TAB       &kp Q         &kp W        &kp E        &kp R          &kp T              &kp Y      &kp U          &kp I        &kp O        &kp P            &kp BSPC
-&lt 2 ESCAPE  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G              &kp H      &hmr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
-&none         &kp Z         &kp X        &kp C        &kp V          &kp B              &kp N      &kp M          &kp COMMA    &kp DOT      &kp FSLH         &none
-                                         &none        &none          &lt 1 BACKSPACE    &kp SPACE  &kp RET        &none
+&kp TAB    &kp Q         &kp W        &kp E        &kp R          &kp T            &kp Y      &kp U          &kp I        &kp O        &kp P            &kp BSPC
+&lt 3 ESC  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G            &kp H      &hmr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
+&none      &kp Z         &kp X        &kp C        &kp V          &kp B            &kp N      &kp M          &kp COMMA    &kp DOT      &kp FSLH         &none
+                                      &none        &mo 1          &kp BACKSPACE    &kp SPACE  &lt 2 RET      &none
             >;
         };
 
         lower_layer {
             display-name = "Lower";
             bindings = <
-&none  &kp POUND    &kp CARET   &kp LPAR  &kp RPAR  &kp BACKSLASH    &kp SLASH  &kp N7   &kp N8  &kp N9  &kp MINUS   &kp BSPC
-&none  &kp EXCL     &kp DOLLAR  &kp LBKT  &kp RBKT  &kp PIPE         &kp STAR   &kp N4   &kp N5  &kp N6  &kp PLUS    &kp EQUAL
-&none  &kp PERCENT  &kp AT      &kp LBRC  &kp RBRC  &kp AMPS         &kp COMMA  &kp N1   &kp N2  &kp N3  &kp PERIOD  &kp RET
-                                &none     &none     &kp BSPC         &kp SPACE  &kp RET  &kp N0
+&none  &none      &none     &none     &none      &none       &kp SLASH  &kp N7   &kp N8  &kp N9  &kp MINUS   &kp BSPC
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none       &kp STAR   &kp N4   &kp N5  &kp N6  &kp PLUS    &kp EQUAL
+&none  &none      &none     &none     &none      &none       &kp COMMA  &kp N1   &kp N2  &kp N3  &kp PERIOD  &kp RET
+                            &none     &none      &kp BSPC    &kp SPACE  &kp RET  &kp N0
             >;
 
             label = "Lower";
+        };
+
+        raise_layer {
+            label = "Raise";
+            display-name = "Raise";
+            bindings = <
+&none  &kp POUND  &kp CARET  &kp AMPS  &kp PIPE  &kp BACKSLASH    &none      &kp SLASH     &kp TILDE    &kp UNDER  &kp GRAVE  &none
+&none  &kp EXCL   &kp LBRC   &kp LBKT  &kp LPAR  &kp DLLR         &none      &kp EQUAL     &kp STAR     &kp PLUS   &kp MINUS  &none
+&none  &none      &kp RBRC   &kp RBKT  &kp RPAR  &kp AT_SIGN      &none      &kp QUESTION  &kp PERCENT  &kp LT     &kp GT     &none
+                             &none     &none     &kp BSPC         &kp SPACE  &kp RET       &none
+            >;
         };
 
         caps_layer {
