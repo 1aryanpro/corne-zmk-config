@@ -11,7 +11,7 @@
     behaviors {
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT_HAND";
+            label = "Homerow Mod Left";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -22,7 +22,7 @@
 
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT_HAND";
+            label = "Homerow Mod Right";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -71,10 +71,10 @@
             label = "Raise";
             display-name = "Raise";
             bindings = <
-&none  &kp POUND  &kp CARET  &kp AMPS  &kp PIPE  &kp BACKSLASH    &none      &kp SLASH     &kp TILDE    &kp UNDER  &kp GRAVE  &none
-&none  &kp EXCL   &kp LBRC   &kp LBKT  &kp LPAR  &kp DLLR         &none      &kp EQUAL     &kp STAR     &kp PLUS   &kp MINUS  &none
-&none  &none      &kp RBRC   &kp RBKT  &kp RPAR  &kp AT_SIGN      &none      &kp QUESTION  &kp PERCENT  &kp LT     &kp GT     &none
-                             &none     &none     &kp BSPC         &kp SPACE  &kp RET       &none
+&none  &kp POUND  &kp CARET  &kp AMPS  &kp PIPE  &kp BACKSLASH    &kp SLASH     &kp PRCNT  &kp TILDE  &kp UNDER  &kp GRAVE  &none
+&none  &kp EXCL   &kp LBRC   &kp LBKT  &kp LPAR  &kp DLLR         &kp QUESTION  &kp EQUAL  &kp STAR   &kp PLUS   &kp MINUS  &none
+&none  &none      &kp RBRC   &kp RBKT  &kp RPAR  &kp AT_SIGN      &none         &none      &none      &none      &none      &none
+                             &none     &none     &kp BSPC         &kp SPACE     &kp RET    &none
             >;
         };
 
