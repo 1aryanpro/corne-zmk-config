@@ -80,9 +80,9 @@
             label = "Raise";
             display-name = "Raise";
             bindings = <
-&none  &kp POUND  &kp CARET  &kp AMPS  &kp PIPE  &kp BACKSLASH    &kp SLASH  &kp QMARK  &kp TILDE  &kp GRAVE       &kp MINUS  &none
-&none  &kp EXCL   &kp LBRC   &kp LBKT  &kp LPAR  &kp DLLR         &kp STAR   &kp EQUAL  &kp PRCNT  &kp UNDERSCORE  &kp PLUS   &none
-&none  &none      &kp RBRC   &kp RBKT  &kp RPAR  &kp AT_SIGN      &none      &none      &none      &none           &none      &none
+&none  &kp POUND  &kp CARET  &kp AMPS  &kp PIPE  &kp BACKSLASH    &kp SLASH  &kp QMARK  &kp TILDE  &kp GRAVE  &kp UNDER  &none
+&none  &kp EXCL   &kp LBRC   &kp LBKT  &kp LPAR  &kp DLLR         &kp PRCNT  &kp EQUAL  &kp STAR   &kp MINUS  &kp PLUS   &none
+&none  &none      &kp RBRC   &kp RBKT  &kp RPAR  &kp AT_SIGN      &none      &none      &none      &none      &none      &none
                              &none     &kp LCMD  &kp BSPC         &kp SPACE  &kp RET    &none
             >;
         };
