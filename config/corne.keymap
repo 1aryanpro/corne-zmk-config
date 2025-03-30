@@ -23,6 +23,18 @@
             hold-trigger-on-release;
         };
 
+        hmsl: homerow_mods_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Homerow Mod Shift";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 38 37 36>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
+
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             label = "Homerow Mod Right";
@@ -34,6 +46,18 @@
             flavor = "balanced";
             quick-tap-ms = <170>;
             require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
+        };
+
+        hmsr: homerow_mods_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Homerow Mod Shift";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
             hold-trigger-on-release;
         };
 
@@ -64,7 +88,7 @@
             display-name = "Base";
             bindings = <
 &kp TAB  &kp Q         &kp W        &kp E        &kp R          &kp T            &kp Y      &kp U          &kp I        &kp O        &kp P            &kp BSPC
-&cesc    &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G            &kp H      &hmr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
+&cesc    &hml LCTRL A  &hml LALT S  &hml LGUI D  &hmsl LSHIFT F  &kp G &kp H      &hmsr RSHIFT J  &hmr RCMD K  &hmr RALT L  &hmr RCTRL SEMI  &kp SQT
 &none    &kp Z         &kp X        &kp C        &kp V          &kp B            &kp N      &kp M          &kp COMMA    &kp DOT      &kp FSLH         &none
                                     &none        &mo 1          &kp BACKSPACE    &kp SPACE  &lt 2 RET      &none
             >;
