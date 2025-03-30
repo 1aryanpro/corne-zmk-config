@@ -20,6 +20,7 @@
             flavor = "balanced";
             quick-tap-ms = <170>;
             require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
         };
 
         hmr: homerow_mods_right {
@@ -33,6 +34,7 @@
             flavor = "balanced";
             quick-tap-ms = <170>;
             require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
         };
 
         cesc: caps_key {
